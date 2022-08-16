@@ -1,0 +1,229 @@
+:root {
+    --light-blue: #00579c;
+    --dark-blue: #012f6b;
+    --light-grey: #e2e2e2;
+    --numbers: #3c7bfd;
+    --black: #000;
+    --white: #fff;
+}
+
+body {
+    font-size: 1.2rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Header: Navbar */
+header {
+    padding: 1rem;
+    background-color: var(--light-blue);
+    color: var(--white);
+    position: sticky;
+    top: 0;
+}
+
+header > nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+header > nav > section {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+header > nav > section > div.logo {
+    width: 2rem;
+    margin-right: 0.3rem;
+}
+
+header > nav > menu.menu-icon {
+    width: 2.5rem;
+}
+/* Header: Navbar end */
+
+/* Main content container */
+div.main-container > main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* Main content container end */
+
+/* Search filter */
+main > section.search-filter {
+    background-color: var(--light-grey);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main > section.search-filter > select {
+    padding: 0.5rem;
+    margin-top: 6px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    background-color: var(--white);
+}
+/* Search filter end */
+
+/* Cards section */
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    padding: 2rem;
+    gap: 1.5rem;
+}
+
+.single-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--light-grey);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    max-width: 20rem;
+    padding: 1rem;
+    cursor: pointer;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+        rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+section.single-card-container section.card-img-container {
+    max-width: 20rem;
+}
+
+/* Text 'Model: City Car' inside cards */
+main > section > section > p {
+    margin-bottom: 5px;
+}
+
+/* Card button */
+section > button {
+    background-color: var(--light-blue);
+    color: var(--white);
+    width: 8rem;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    padding-block: 0.8rem;
+    cursor: pointer;
+}
+/* Cards section end */
+
+/* Pagination section */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    position: sticky;
+    bottom: 0;
+    background-color: var(--white);
+}
+
+.box {
+    padding: 0.7rem 1.2rem;
+    border: 1px solid var(--light-grey);
+    color: var(--numbers);
+    cursor: pointer;
+}
+/* Pagination section end */
+
+/* Footer section */
+footer {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.social-media-icons-container {
+    display: flex;
+    justify-content: center;
+}
+
+.social-media-icon {
+    width: 2rem;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+/* Footer section end */
+
+/* '.menu-display' is hidden in mobile version */
+/* The hamburger icon is displayed instead */
+.menu-display {
+    display: none;
+}
+
+/* Media Queries para desktop y otros tamaños de pantalla */
+/* No tomé la sugerencia de la guía para hacer un breakpoint para tablet y otra para desktop, ya que usando 'repeat(auto-fill, minmax( , ))' resulta responsivo y estético para distintos tamaños de pantalla, incluyendo tablets. */
+
+@media (min-width: 576px) {
+    header {
+        grid-area: header;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+    main {
+        grid-area: main;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    .main-container {
+        display: grid;
+        min-height: 100vh;
+        grid-template-areas:
+            "header main"
+            "footer main";
+        grid-template-columns: 15rem 1fr;
+        grid-template-rows: 1fr 9rem;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    }
+
+    /* Hambuger icon is hidden in desktop version */
+    /* '.menu-display' is displayed instead */
+    .menu-icon {
+        display: none;
+    }
+
+    .menu-display {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 0.5rem;
+    }
+
+    .menu-display > p {
+        padding: 0.4rem;
+    }
+
+    header > nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    main > section.search-filter {
+        position: sticky;
+        top: 0;
+    }
+}
