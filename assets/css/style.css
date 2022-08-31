@@ -14,7 +14,7 @@ body {
 
 /* Header: Navbar */
 header {
-    padding: 1rem;
+    padding: 1rem 0rem;
     background-color: var(--light-blue);
     color: var(--white);
     position: sticky;
@@ -54,7 +54,7 @@ div.main-container > main {
 /* Search filter */
 main > section.search-filter {
     background-color: var(--light-grey);
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,8 +92,8 @@ main > section.search-filter > select {
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
-    max-width: 20rem;
-    padding: 1rem;
+    max-width: 18rem;
+    padding-bottom: 1rem;
     cursor: pointer;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
         rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
@@ -118,7 +118,7 @@ section > button {
     -moz-border-radius: 7px;
     -ms-border-radius: 7px;
     -o-border-radius: 7px;
-    padding-block: 0.8rem;
+    padding-block: 0.5rem;
     cursor: pointer;
 }
 /* Cards section end */
@@ -127,7 +127,7 @@ section > button {
 .pagination {
     display: flex;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.5rem;
     position: sticky;
     bottom: 0;
     background-color: var(--white);
@@ -197,7 +197,7 @@ footer {
     }
 
     .cards-container {
-        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
     }
 
     /* Hambuger icon is hidden in desktop version */
